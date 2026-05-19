@@ -24,15 +24,15 @@ else:
     if age < 75:
         if 90 <= sys_bp <= 140:
             if blood_sugar < 150:
-                print(" KẾT LUẬN: ĐỦ ĐIỀU KIỆN PHẪU THUẬT")
+                print("ĐỦ ĐIỀU KIỆN PHẪU THUẬT")
             else:
-                print(" KẾT LUẬN: TỪ CHỐI PHẪU THUẬT")
-                print("Lý do: Đường huyết vượt quá mức an toàn (Phải dưới 150 mg/dL).")
+                print("TỪ CHỐI PHẪU THUẬT")
+                print("Đường huyết vượt quá mức an toàn (Phải dưới 150 mg/dL).")
                 
         else:
-            print(" KẾT LUẬN: TỪ CHỐI PHẪU THUẬT")
-            print("Lý do: Huyết áp tâm thu ngoài khoảng an toàn (Yêu cầu: 90 - 140 mmHg).")
+            print("  TỪ CHỐI PHẪU THUẬT")
+            print("Huyết áp tâm thu ngoài khoảng an toàn (Yêu cầu: 90 - 140 mmHg).")
             
     else:
-        print(" KẾT LUẬN: TỪ CHỐI PHẪU THUẬT")
-        print("Lý do: Bệnh nhân vượt quá độ tuổi phẫu thuật an toàn (Phải dưới 75 tuổi).")
+        print("  TỪ CHỐI PHẪU THUẬT")
+        print("Bệnh nhân vượt quá độ tuổi phẫu thuật an toàn (Phải dưới 75 tuổi).")
