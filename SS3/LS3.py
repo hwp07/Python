@@ -15,7 +15,7 @@ for i in range(3):
     name = input('Họ và tên nhân viên: ')
     department = input('Phòng ban công tác: ')
 
-    if (id and name) == '' or (id and name) == ' ':
+    if id.strip() == '' or name.strip() == '':
         print('\n[CẢNH BÁO] Dữ liệu tên hoặc mã khôgn hợp lệ! Hủy bỏ tạo hồ sơ cho nhân viên này.\n')
         continue
 

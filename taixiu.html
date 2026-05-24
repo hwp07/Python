@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cổng Game Tài Xỉu Hoàng Gia</title>
+    <!-- Google Fonts Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Link CSS tách biệt -->
+    <link rel="stylesheet" href="taixiu.css?v=20260522">
+</head>
+<body>
+
+    <!-- Toast Notifications -->
+    <div class="toast-box" id="toast-box"></div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo"><span>🎲</span> CỔNG GAME TÀI XỈU HOÀNG GIA</div>
+        <p class="subtitle">Trải nghiệm sòng bài thượng lưu - Công bằng & Hồi hộp</p>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <div class="game-container">
+        
+        <!-- LEFT: GAME BOARD -->
+        <main class="glass-card">
+            <!-- Wallet Status -->
+            <div class="wallet-bar">
+                <div class="wallet-info">
+                    <span class="wallet-icon">💳</span>
+                    <div class="wallet-details">
+                        <p>Số dư tài khoản</p>
+                        <div class="wallet-amount" id="balance-display">0 VND</div>
+                    </div>
+                </div>
+                <button class="btn-action" id="btn-open-deposit">
+                    <span>💵</span> Nạp Tiền
+                </button>
+            </div>
+
+            <!-- Play choices: TÀI or XỈU -->
+            <div class="board-grid">
+                <div class="bet-button xiu" id="btn-select-xiu">
+                    <div class="bet-title">XỈU</div>
+                    <div class="bet-range">4 - 10 (Thấp)</div>
+                    <div class="bet-odds">1 ăn 1</div>
+                </div>
+                <div class="bet-button tai" id="btn-select-tai">
+                    <div class="bet-title">TÀI</div>
+                    <div class="bet-range">11 - 17 (Cao)</div>
+                    <div class="bet-odds">1 ăn 1</div>
+                </div>
+            </div>
+
+            <!-- Dice Shaker Plate -->
+            <div class="dice-table-area">
+                <div class="dice-bowl-shaker" id="dice-bowl">
+                    <!-- Ba con xúc xắc xếp dạng hình tam giác với wrapper -->
+                    <div class="dice-wrapper top-center">
+                        <div class="dice dice-val-1">
+                            <div></div><div></div><div></div><div></div>
+                            <div class="dot red"></div>
+                            <div></div><div></div><div></div><div></div>
+                        </div>
+                    </div>
+                    <div class="dice-wrapper bottom-left">
+                        <div class="dice dice-val-1">
+                            <div></div><div></div><div></div><div></div>
+                            <div class="dot red"></div>
+                            <div></div><div></div><div></div><div></div>
+                        </div>
+                    </div>
+                    <div class="dice-wrapper bottom-right">
+                        <div class="dice dice-val-1">
+                            <div></div><div></div><div></div><div></div>
+                            <div class="dot red"></div>
+                            <div></div><div></div><div></div><div></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bát úp dùng để nặn soi kết quả -->
+                <div class="dice-plate-lid" id="dice-lid"></div>
+                <!-- Hướng dẫn nặn -->
+                <div class="drag-hint" id="drag-hint">Kéo bát để soi xúc xắc 👆</div>
+                
+                <div class="result-bubble" id="result-bubble">TÀI (12đ)</div>
+            </div>
+
+            <!-- Betting Inputs & Action -->
+            <div class="control-panel">
+                <div class="bet-input-wrapper">
+                    <input type="number" id="input-bet-amount" placeholder="Nhập tiền cược..." min="1">
+                    <span class="currency-label">VND</span>
+                </div>
+
+                <div class="quick-bet-row">
+                    <button class="quick-bet-btn" data-val="10000">10K</button>
+                    <button class="quick-bet-btn" data-val="50000">50K</button>
+                    <button class="quick-bet-btn" data-val="100000">100K</button>
+                    <button class="quick-bet-btn" data-val="500000">500K</button>
+                    <button class="quick-bet-btn" id="btn-bet-all">ALL IN</button>
+                </div>
+
+                <button class="btn-spin" id="btn-shake-play" disabled>
+                    <span>🎰</span> Đặt cược & Lắc
+                </button>
+            </div>
+        </main>
+
+        <!-- RIGHT: STATS & LOGS -->
+        <aside class="glass-card">
+            <div>
+                <h3 class="history-title">
+                    <span>📊 Xu Hướng (Cầu)</span>
+                    <span id="bead-count" style="font-size: 0.8rem; color: var(--text-muted);">0 ván gần đây</span>
+                </h3>
+                <div class="history-beads" id="history-bead-container">
+                    <!-- History circles will be inserted here -->
+                </div>
+            </div>
+
+            <div class="mt-10">
+                <h3 class="history-title">📜 Lịch sử cược</h3>
+                <div class="log-list" id="log-list-container">
+                    <!-- Log lines will be appended here -->
+                    <div class="text-center" id="no-history-text" style="color: var(--text-muted); font-size: 0.8rem; padding: 20px;">
+                        Chưa có lịch sử ván cược nào.
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- MODAL: INITIAL DEPOSIT -->
+    <div class="modal-overlay" id="deposit-modal">
+        <div class="modal-card">
+            <h3>💰 NẠP TIỀN CHƠI GAME</h3>
+            <p>Vui lòng nạp một số tiền để bắt đầu bước vào chiếu bạc Tài Xỉu Hoàng Gia.</p>
+            <input type="number" class="modal-input" id="input-deposit-amount" placeholder="Nhập số tiền nạp..." value="500000">
+            <div class="flex justify-between" style="gap: 15px;">
+                <button class="btn-outline" id="btn-close-deposit-modal" style="flex: 1;">Đóng</button>
+                <button class="btn-action" id="btn-submit-deposit" style="flex: 1; justify-content: center;">Nạp Tiền</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link JS tách biệt -->
+    <script src="taixiu.js?v=20260522" defer></script>
+</body>
+</html>
