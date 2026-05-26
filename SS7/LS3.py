@@ -50,6 +50,7 @@ while True:
                 phone = parts[2].strip().replace("-", "")
                 department = parts[3].strip().upper()
 
+
                 # kiểm tra số điện thoại
                 if phone.isdigit():
                     phone = "******" + phone[-4:]
