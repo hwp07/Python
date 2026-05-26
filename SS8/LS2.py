@@ -115,7 +115,7 @@ while True:
                 print(" Mã giảm giá phải bắt đầu bằng SALE.")
 
             else:
-                print("✅ Mã giảm giá hợp lệ.")
+                print(" Mã giảm giá hợp lệ.")
 
         case 4:
             print("\n*** TÌM KIẾM VÀ THAY THẾ ***")
