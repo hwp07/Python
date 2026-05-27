@@ -102,7 +102,7 @@ while True:
                         break
 
                 if hop_le:
-                    print("✅ Hashtag hợp lệ.")
+                    print(" Hashtag hợp lệ.")
 
                 else:
                     print(" Hashtag chứa ký tự không hợp lệ.")
