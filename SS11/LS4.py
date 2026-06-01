@@ -129,7 +129,7 @@ while True:
             for index, product in enumerate(product_list, start=1):
                 revenue = product["price"] * product["sold"]
 
-                print(f"{index}. {product['product_name']} | Đã bán: {product['sold']} | Doanh thu: {revenue:,}")
+                print(f"{index} | {product['product_name']} | Đã bán: {product['sold']} | Doanh thu: {revenue:,}")
 
                 if product["sold"] > max_sold:
                     max_sold = product["sold"]
