@@ -1,9 +1,3 @@
-# ==============================================================================
-# HE THONG QUAN LY BAI DO XE THONG MINH
-# Smart Parking Management System
-# Dua tren tai lieu dac ta SRS - Smart Parking System
-# ==============================================================================
-
 parking_lot = []
 next_id = 1
 
