@@ -26,7 +26,7 @@ def add_student(book):
             if i["id"] == new_student["id"]:
                 print(f"Lỗi: Mã học sinh {i["id"]} đã tồn tại! Vui lòng nhập mã khác.\n")
                 flag = 0
-                continue
+                break
         
         if flag == 1:
             new_student["name"] = input("Nhập tên học sinh: ")
