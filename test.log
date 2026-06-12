@@ -1,0 +1,7 @@
+DEBUG: Đang tính toán chiết khấu cho hạng gold với số lượng 50
+DEBUG: Áp dụng chiết khấu biên cho số lượng lớn: tổng rate=0.15000000000000002
+INFO: Kết quả: Tổng tiền = 4250.0
+DEBUG: Đang tính toán chiết khấu cho hạng silver với số lượng -5
+ERROR: Số lượng sản phẩm phải lớn hơn 0
+DEBUG: Đang tính toán chiết khấu cho hạng gold với số lượng 50
+DEBUG: Áp dụng chiết khấu biên cho số lượng lớn: tổng rate=0.15000000000000002
